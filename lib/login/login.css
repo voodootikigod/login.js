@@ -1,0 +1,21 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: inherit; vertical-align: baseline; }
+body { line-height: 1; color: black; background: white; }
+a img { border: none; }
+* { font-family: "Arial"; font-size: 14px; font-weight: bold; }
+input, textarea { font-size: 12px; color: black !important; font-weight: normal; padding: 4px !important; border: none;}
+body { background: #fafafd; font-family: Helvetica, Arial, sans-serif; }
+body #frame { border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; background: #a5e7fd; padding: 12px; width: 400px; margin: 100px auto; }
+#content { margin-left: 0px; }
+.container { background: white; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 12px; }
+.container .error { padding: 6px; border-bottom: 1px solid #cccccc; background: #ffffdd; text-align: center; font-size: 12px; }
+.container form { border-top: 1px solid #cccccc; }
+.container form .submit { padding: 12px 0px 12px 112px; }
+.field { overflow: hidden; display: inline-block; margin: 8px 0px 6px; padding-bottom: 6px; line-height: 22px; vertical-align: middle; border-bottom: 1px solid #cccccc; }
+.field { display: block; }
+.field .label { float: left; width: 100px; text-align: right; line-height: 32px; height: 32px; margin-right: 12px; vertical-align: middle; font-size: 12px; }
+.field .value { height: 32px; font-size: 12px; line-height: 32px; }
+.field .value input { font-size: 14px; vertical-align: middle; }
+h1 { font-size: 22px; font-weight: bold; margin: 12px 0px; font-color: #333333;}
+input[type='text'], input[type='password'], textarea { border: 1px solid #a0a0a0; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; }
+input[type='text'].active, input[type='password'].active, textarea.active { border-color: #727272; }
+input[type='submit']	{ background:#95E6FB; border: 1px solid #a0a0a0; border-radius: 2px; -moz-border-radius: 2px; -webkit-border-radius: 2px; border: 1px solid #497D91; font-weight:bold; padding: 4px 16px !important; font-size:14px;}

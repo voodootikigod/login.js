@@ -39,17 +39,6 @@ What that's not enough for you? We have configurations for you, provide these as
     and the remaining elements list the excluded methods (GET, POST, PUT, DELETE).
     Default: the simple array of ['/login', '/logout']
 
-    storage: specifies the storage mechanism that will be used to store active 
-    authenticated session information. Essentially this is just a simple map of
-    generated UUID keys to the return value of the provided login function.
-    Default: the MemoryStore object, but can be any object that provides the 
-    following interface:
-      {
-        get: function(key, callback) { callback(id_value); },
-        set: function(key, id) {},
-        del: function(key) {}
-      }
-
     template: a function with the first parameter being the connect response object
     and the second parameter is a boolean that indicates a failed login 
     (true) or a fresh login (false). Use it to indicate an error message 
