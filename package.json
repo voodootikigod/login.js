@@ -1,10 +1,11 @@
 {
-  "name": "login.js",
-  "description": "Simple authentication middleware for connect.js",
-  "version": "0.1",
+  "name": "login",
+  "description": "Dead simple authentication middleware via connect.js",
+  "version": "0.0.2",
   "contributors": [ 
     { "name": "Chris Williams", "email": "voodootikigod@gmail.com" }
   ],
-  "directories": { "lib": "." },
+  "dependencies": { "connect": ">= 0.2.4" },
+  "directories": { "lib": "./lib/login" },
   "engines": { "node": ">= 0.1.98" }
 }

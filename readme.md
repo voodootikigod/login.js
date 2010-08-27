@@ -35,7 +35,7 @@ What that's not enough for you? We have configurations for you, provide these as
 
     excludes: an array of either strings or regular expressions that describe paths
     that do not require login. An array can also be provided as an element
-    where the first item must be a string or regular expression describing the paht
+    where the first item must be a string or regular expression describing the path
     and the remaining elements list the excluded methods (GET, POST, PUT, DELETE).
     Default: the simple array of ['/login', '/logout']
 
