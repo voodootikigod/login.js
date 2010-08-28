@@ -1,7 +1,7 @@
 {
   "name": "login",
   "description": "Dead simple authentication middleware via connect.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "contributors": [ 
     { "name": "Chris Williams", "email": "voodootikigod@gmail.com" }
   ],
