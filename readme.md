@@ -65,6 +65,13 @@ to have the user object of the logged in user available on the request object (r
 
 Bitching.
 
+## Database Requirements
+
+Redis requires nothing other than being set up. Users are keyed off their logins and are assumed to hashes - rest can be handled by the system.
+
+PostgreSQL requires a bit of schema love that I will import later (you can look at the source code for now to figure it out -- or ask me).
+
+
 ## License 
 
 (The MIT License)
