@@ -30,37 +30,78 @@ input[type='text'].active,input[type='password'].active,textarea.active{border-c
 input#user_remember_me{margin-top:0px;}
 .notice{padding:6px;border:3px solid black;border-color:#7c7b7b;background:#ffffdd;color:#45474b;margin:1em 0px;text-align:center;font-size:12pxp;}
 #error{padding:8px;margin:8px 0px;font-weight:bold;color:red;background:#eee;border:2px solid red;border-left:0px;border-right:0px;text-align:center;}
-/* blue button */
-button.blue, button.white { border: 0px;}
-a.button-blue, button.blue{display:inline-block;vertical-align:middle;padding:0 20px 0 0;line-height:30px;height:33px;background:url("http://cache1.ourparentscdn.com/buttons.png") right 0px no-repeat;-webkit-user-select:none;-moz-user-select:none;user-select:none;}
-a.button-blue span, button.blue span{display:block;padding:0 0 1px 20px;height:32px;color:#ffffff;text-shadow:0px -1px 0px #2f79a3;font-family:Helvetica,Arial,sans-serif;font-size:12px;background:url("http://cache1.ourparentscdn.com/buttons.png") left 0px no-repeat;}
-/* hover */
-a.button-blue:hover, button.blue:hover {background:url("http://cache1.ourparentscdn.com/buttons.png") right -34px no-repeat;}
-a.button-blue:hover span, button.blue:hover span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -34px no-repeat;}
-/* active */
-a.button-blue:active,
-a.button-blue:focus, 
-button.blue:active, 
-button.blue:focus {background:url("http://cache1.ourparentscdn.com/buttons.png") right -68px no-repeat;}
-a.button-blue:active span,
-a.button-blue:focus span,
-button.blue:active span,
-button.blue:focus span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -68px no-repeat;padding-top:1px;padding-bottom:0px;}
-/* white button */
-a.button-white, button.white{display:inline-block;vertical-align:middle;padding:0 20px 0 0;line-height:30px;height:33px;background:url("http://cache1.ourparentscdn.com/buttons.png") right -103px no-repeat;-webkit-user-select:none;-moz-user-select:none;user-select:none;}
-a.button-white span, button.white span{display:block;padding:0 0 1px 20px;height:32px;color:#5e5e5e;text-shadow:0px -1px 0px #ffffff;font-family:Helvetica,Arial,sans-serif;font-size:12px;background:url("http://cache1.ourparentscdn.com/buttons.png") left -103px no-repeat;}
-/* hover */
-a.button-white:hover, button.white:hover{background:url("http://cache1.ourparentscdn.com/buttons.png") right -137px no-repeat;}
-a.button-white:hover span, button.white:hover span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -137px no-repeat;}
-/* active */
-a.button-white:active,
-a.button-white:focus,
-button.white:active,
-button.white:focus{background:url("http://cache1.ourparentscdn.com/buttons.png") right -171px no-repeat;}
-a.button-white:active span,
-a.button-white:focus span,
-button.white:active span,
-button.white:focus span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -171px no-repeat;padding-top:1px;padding-bottom:0px;}
 .forgot { font-size: 11px; margin-left: 12px; }
 a.forgot, a.forgot:visited, a.forgot:link{ color:#333;}
 a.forgot:hover { color:red}
+/* REQUIRED BUTTON STYLES: */		
+button { 
+    position: relative;
+    border: 0; 
+    padding: 0;
+    cursor: pointer;
+    overflow: visible; /* removes extra side padding in IE */
+}
+
+button::-moz-focus-inner {
+    border: none;  /* overrides extra padding in Firefox */
+}
+
+button span { 
+    position: relative;
+    display: block; 
+    white-space: nowrap;	
+}
+
+
+button span img {
+    vertical-align: middle;
+    padding-bottom: 2px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    /* Safari and Google Chrome only - fix margins */
+    button span {
+    	margin-top: -2px;
+    	margin-right: 2px;
+    	margin-bottom: -2px;
+    }
+}
+
+button.blue { border: 0px; vertical-align:middle;}
+button.blue span { border: 0px; vertical-align:middle; line-height: 30px; }
+button.blue{
+  display:inline-block;
+  vertical-align:middle;
+  padding:0 18px 0 0;
+  line-height: 33px;
+  height:33px;
+  background:url("http://cache1.ourparentscdn.com/buttons.png") right 0px no-repeat;
+  border: 0px;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  user-select:none;
+  font-size:12px;
+}
+button.blue span{
+  border: 0px;
+  display:block;
+  padding:0 0 1px 20px;
+  height:32px;
+  line-height:33px;
+  color:#ffffff;
+  text-shadow:0px -1px 0px #2f79a3;
+  font-family:Helvetica,Arial,sans-serif;
+  font-size:12px;
+  background:url("http://cache1.ourparentscdn.com/buttons.png") left 0px no-repeat;
+}
+
+
+
+/* hover */
+button.blue:hover {background:url("http://cache1.ourparentscdn.com/buttons.png") right -34px no-repeat;}
+button.blue:hover span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -34px no-repeat;}
+/* active */
+button.blue:active, 
+button.blue:focus {background:url("http://cache1.ourparentscdn.com/buttons.png") right -68px no-repeat;}
+button.blue:active span,
+button.blue:focus span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -68px no-repeat;padding-top:1px;padding-bottom:0px;}
