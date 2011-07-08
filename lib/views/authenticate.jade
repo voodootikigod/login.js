@@ -1,0 +1,25 @@
+#sign_in
+  h2 Sign In
+  - if (typeof(failed) != 'undefined') 
+    #error
+      | The username or password you entered is incorrect.
+  form(action="/authenticate", class="new_user_session", id="new_user_session", method="post")
+    .field
+      .label
+        label(for="email") Email
+      .value
+        input(name="email", id="email", size="30", type="text", value= (typeof email =="undefined" ? "" : email) )
+    .field
+      .label
+        label(for="password") Password
+      .value
+        input(name="password", id="password", size="30", type="password")
+    .field
+      .label
+      .value
+        input(type="checkbox", value="1", name="remember_me")
+        label(for="remember_me") Remember me
+    .submit
+      button.blue#user_submit(name="commit", type="submit")
+        span Sign In
+      a.forgot(href="/forgot_password") Forgot Password?

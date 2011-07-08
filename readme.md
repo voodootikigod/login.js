@@ -1,55 +1,75 @@
 # login.js
 
-login.js is designed to be a drop-in, minimal configuration [Connect middleware](http://github.com/senchalabs/connect) module that provides user authentication for web applications. It doesn't provide twitter accounts, openid, or facebook connect authentication, it just makes standard user authentication easy peasy. The original design most likely sucks horribly because it was made by Chris Williams ([voodootikigod][]) and was driven by a need for such a thing (and a good couple pints of beer).
-
-login.js is released under similar licensing to Connect, a very liberal MIT license.
+login.js is designed to be a drop-in, minimal configuration express.js login and forgot password module. It doesn't provide twitter accounts OAuth, openid, or Facebook connect authentication, it just makes standard user authentication easy peasy. The original design <strike>most likely</strike> did suck horribly because it was made by Chris Williams ([voodootikigod][http://voodootikigod.com]) and was driven by a need for such a thing (and a good couple pints of beer). It has since been refactor for your pleasure. 
 
 ## Features
 
-  * Brain-dead simple authentication implementation.
-  * Ability to make it more complex ONLY if you want it to be.
-  
-
-## I AM SAM
-
-At some point in the life of a web application you will want to know who is who, for whatever (devious) reason. login.js provides you with a very simple, in-memory authentication process, but that can be swapped out for other formats. Enough flapping, here is all you need to get it going:
+  * Brain-dead simple authentication implementation. Instant user authentication, zero thought.
 
 
-    var Connect, login = require('connect'), require('login');
+## Getting Started
 
-    var server = Connect.createServer(
-      login(function (user, password) { return 1; }),
-      function(req, res) {
-          res.writeHead(200, { 'Content-Type': 'text/plain' });
-          res.end('Hello World');
-      }
-    );
-    var server = Connect.createServer();
-    server.listen(3000);
+At some point in the life of a web application you will want to know who is who, for whatever (devious) reason. login.js works with either Redis or PostgreSQL (needs to be configured) and provides super strong encryption - read-in BCrypt - unlike every other authentication system out there. For now user account creation is left as an exercise for the reader (eventually will be brought into this section as well, but not at this time).
 
-Viola, that's it. Ok, maybe not anything special, but this gives us all the basis for what you need. the login function is the instantiation of our middleware which needs a function that returns some identifier for a user IF AND ONLY IF the user and password match an actual user. If it does not match a person, simply return undefined. That is all that is required of you to have a full login system. Note this also works, in similar fashion for express.js.
+First off we need to initialize our system, we can use either the PostgreSQL (npm install pg) or Redis (npm install redis) backend system
 
-## Configuration
+    var express       =   require("express"), 
+        connect     =   require("connect"), 
+        postmark    =   require("postmark")(POSTMARK_API_KEY), 
+        postgres    =   require("pg");
+    
+    var login = require("login").postgresql;
+    var app = express.createServer();
+    
+Then we connect our database and pass in our configuration data:
 
-What that's not enough for you? We have configurations for you, provide these as an object for the second parameter to the login execution:
+    postgres.connect(config.postgresql, function (err, db) {
+      var auth = login(app, db, postmark, { 
+        app_name: "Magical Application", 
+        base_url: "http://unicorn.example.com", 
+        from: "donotreply@example.com"
+      });.
+    });
 
-    excludes: an array of either strings or regular expressions that describe paths
-    that do not require login. An array can also be provided as an element
-    where the first item must be a string or regular expression describing the path
-    and the remaining elements list the excluded methods (GET, POST, PUT, DELETE).
-    Default: the simple array of ['/login', '/logout']
+For Redis users, the following code is the same example:
 
-    template: a function with the first parameter being the connect response object
-    and the second parameter is a boolean that indicates a failed login 
-    (true) or a fresh login (false). Use it to indicate an error message 
-    showing invalid username and password combination.
-    Default: the most ugly login screen you have ever seen.
+    var express       =   require("express"), 
+        connect     =   require("connect"), 
+        postmark    =   require("postmark")(POSTMARK_API_KEY), 
+        redis    =   require("redis").createClient();
+
+    var login = require("login").redis;
+    var app = express.createServer();
+
+Then we connect our database and pass in our configuration data:
+
+    var auth = login(app, redis, postmark, { 
+      app_name: "Magical Application", 
+      base_url: "http://unicorn.example.com", 
+      from: "donotreply@example.com"
+    });
+
+This will autobind the various routes for authentication into your system as well as forgot password handling. Basically everything you need for a usable, secure application (it is even mildly pretty too!) It also provides you with helper functions of load\_user and require\_user which can be used for locking down parts of your application and instantiating the user object in others. 
+
+Use like this:
+
+    app.("/secure/index", auth.require\_user, function (req, res) { res.send("#winning"); });
+
+to block people from accessing the secure part of your app.
+
+Or use like this:
+
+    app.("/public/index", auth.load\_user, function (req, res) { res.send("everybody gets a car!"); });
+
+to have the user object of the logged in user available on the request object (req.user) if available, else it will be undefined. 
+
+Bitching.
 
 ## License 
 
 (The MIT License)
 
-Copyright (c) 2010 Chris Williams
+Copyright (c) 2010, 2011 Chris Williams
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
