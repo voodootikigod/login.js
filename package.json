@@ -1,7 +1,7 @@
 {
   "name": "login",
   "description": "Dead simple login processor for express.js",
-  "version": "0.6.9",
+  "version": "0.7.0",
   "author": "Chris Williams <voodootikigod@gmail.com>",
   "contributors": [ 
       { "name": "Chris Williams", "email": "voodootikigod@gmail.com" }
@@ -10,11 +10,9 @@
       "type": "git",
       "url": "https://github.com/voodootikigod/login.js.git"
   },
-  "keywords": ["authentication", "forgot password","account management", "express", "simple", "login", "users", "security"],
+  "keywords": ["authentication", "forgot password","secure", "bcrypt", "account management", "express", "simple", "login", "users", "security"],
   "dependencies": { 
     "express": ">= 2.4.0", 
-    "rbytes": ">= 0.0.2", 
-    "jade": ">= 0.12.4", 
     "jade": ">= 0.12.4", 
     "postmark": ">= 0.1.2", 
     "bcrypt": ">= 0.2.3" 
