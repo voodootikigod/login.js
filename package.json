@@ -1,7 +1,7 @@
 {
   "name": "login",
   "description": "Dead simple login processor for express.js",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "author": "Chris Williams <voodootikigod@gmail.com>",
   "contributors": [ 
       { "name": "Chris Williams", "email": "voodootikigod@gmail.com" }
