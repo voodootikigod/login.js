@@ -75,7 +75,7 @@ button.blue{
   padding:0 18px 0 0;
   line-height: 33px;
   height:33px;
-  background:url("http://cache1.ourparentscdn.com/buttons.png") right 0px no-repeat;
+  background:url("/login/buttons.png") right 0px no-repeat;
   border: 0px;
   -webkit-user-select:none;
   -moz-user-select:none;
@@ -92,16 +92,16 @@ button.blue span{
   text-shadow:0px -1px 0px #2f79a3;
   font-family:Helvetica,Arial,sans-serif;
   font-size:12px;
-  background:url("http://cache1.ourparentscdn.com/buttons.png") left 0px no-repeat;
+  background:url("/login/buttons.png") left 0px no-repeat;
 }
 
 
 
 /* hover */
-button.blue:hover {background:url("http://cache1.ourparentscdn.com/buttons.png") right -34px no-repeat;}
-button.blue:hover span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -34px no-repeat;}
+button.blue:hover {background:url("/login/buttons.png") right -34px no-repeat;}
+button.blue:hover span{background:url("/login/buttons.png") left -34px no-repeat;}
 /* active */
 button.blue:active, 
-button.blue:focus {background:url("http://cache1.ourparentscdn.com/buttons.png") right -68px no-repeat;}
+button.blue:focus {background:url("/login/buttons.png") right -68px no-repeat;}
 button.blue:active span,
-button.blue:focus span{background:url("http://cache1.ourparentscdn.com/buttons.png") left -68px no-repeat;padding-top:1px;padding-bottom:0px;}
+button.blue:focus span{background:url("/login/buttons.png") left -68px no-repeat;padding-top:1px;padding-bottom:0px;}
