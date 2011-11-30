@@ -9,21 +9,25 @@ a img{border:none;}
 *{font-family:"Arial";font-size:14px;font-weight:bold;}
 input,textarea{font-size:12px;color:black !important;font-weight:normal;padding:4px !important;border:none;}
 body#auth{background:#eaeaea;color:#45474b;font:normal normal normal 13px/18px Arial,sans-serif; height: 100%}
-body#auth #design{border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;background:#979797;border:1px solid black;border-color:#7c7b7b;padding:12px;width:400px;margin:100px auto;}
-body#auth #design #content{margin-left:0px;}
-body#auth #design .container{background:white;border:1px solid black;border-color:#7c7b7b;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;padding:12px;}
-body#auth #design .container h2{font-size:22px;font-weight:bold;font-color:#333333;margin:12px 0px;}
-body#auth #design .container .error{padding:6px;border-bottom:1px solid black;border-color:#7c7b7b;background:#ffffdd;text-align:center;font-size:12px;}
-body#auth #design .container #utilities{font-size:11px;padding-left:116px;}
-body#auth #design .container #utilities a{color:#355871;display:block;}
-body#auth #design .container form{border-top:1px solid black;border-color:#7c7b7b;}
-body#auth #design .container form .submit{padding:12px 0px 12px 112px;}
-body#auth #design .container .field{overflow:hidden;display:inline-block;margin:8px 0px 6px;padding-bottom:6px;line-height:22px;vertical-align:middle;border-bottom:1px solid black;border-color:#7c7b7b;}
-body#auth #design .container .field{display:block;}
-body#auth #design .container .field .label{float:left;width:100px;text-align:right;line-height:32px;height:32px;margin-right:12px;vertical-align:middle;font-size:12px;}
-body#auth #design .container .field .value{height:32px;font-size:12px;line-height:32px;}
-body#auth #design .container .field .value label{vertical-align:middle;padding-top:6px;}
-body#auth #design .container .field .value input{font-size:14px;vertical-align:middle;}
+#design{border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;background:#979797;border:1px solid black;border-color:#7c7b7b;padding:12px;width:400px;margin:100px auto;}
+#content{margin-left:0px;}
+.container{background:white;border:1px solid black;border-color:#7c7b7b;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;padding:12px;}
+.container h2{font-size:22px;font-weight:bold;font-color:#333333;margin:12px 0px;}
+.container .error{padding:6px;border-bottom:1px solid black;border-color:#7c7b7b;background:#ffffdd;text-align:center;font-size:12px;}
+#utilities{font-size:11px;padding-left:116px;}
+#utilities a{color:#355871;display:block;}
+.container form{border-top:1px solid black;border-color:#7c7b7b;}
+form .submit{padding:12px 0px 12px 112px;}
+.field{overflow:hidden;padding:8px 0px;line-height:22px;vertical-align:middle;border-bottom:1px solid black;border-color:#7c7b7b;display:block;}
+
+.field.remember_me .label { display: none }
+.field.remember_me .value { margin-left: 110px; line-height: 12px; height: 12px; padding: 0px 0px 8px;}
+.field.remember_me input, .field.remember_me label { vertical-align: middle; }
+
+.label{float:left;width:100px;text-align:right;line-height:32px;height:32px;margin-right:12px;vertical-align:middle;font-size:12px;}
+.value{height:32px;font-size:12px;line-height:32px;}
+.value label{vertical-align:middle;padding-top:6px;}
+.value input{font-size:14px;vertical-align:middle;}
 input{color:#45474b;}
 input[type='text'],input[type='password'],textarea{border:1px solid #a0a0a0;border-radius:2px;-moz-border-radius:2px;-webkit-border-radius:2px;}
 input[type='text'].active,input[type='password'].active,textarea.active{border-color:#727272;}
@@ -67,9 +71,8 @@ button span img {
     }
 }
 
-button.blue { border: 0px; vertical-align:middle;}
-button.blue span { border: 0px; vertical-align:middle; line-height: 30px; }
 button.blue{
+  border: 0px;
   display:inline-block;
   vertical-align:middle;
   padding:0 18px 0 0;
@@ -84,10 +87,11 @@ button.blue{
 }
 button.blue span{
   border: 0px;
+  vertical-align: middle;
   display:block;
   padding:0 0 1px 20px;
   height:32px;
-  line-height:33px;
+  line-height:29px;
   color:#ffffff;
   text-shadow:0px -1px 0px #2f79a3;
   font-family:Helvetica,Arial,sans-serif;
@@ -105,3 +109,6 @@ button.blue:active,
 button.blue:focus {background:url("/login/buttons.png") right -68px no-repeat;}
 button.blue:active span,
 button.blue:focus span{background:url("/login/buttons.png") left -68px no-repeat;padding-top:1px;padding-bottom:0px;}
+
+
+
