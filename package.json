@@ -1,7 +1,7 @@
 {
   "name": "login",
   "description": "Dead simple login processor for express.js",
-  "version": "0.7.5",
+  "version": "0.8.0",
   "author": "Chris Williams <voodootikigod@gmail.com>",
   "contributors": [ 
       { "name": "Chris Williams", "email": "voodootikigod@gmail.com" }
@@ -13,7 +13,6 @@
   "keywords": ["authentication", "forgot password","secure", "bcrypt", "account management", "express", "simple", "login", "users", "security"],
   "dependencies": { 
     "express": ">= 2.4.0", 
-    "jade": ">= 0.12.4", 
     "postmark": ">= 0.1.2", 
     "bcrypt": ">= 0.2.3" 
   },

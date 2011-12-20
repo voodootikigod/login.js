@@ -1,5 +1,8 @@
 # login.js
 
+
+*BIG NOTE* Version 0.8.0 and above are being migrated to not use any template engine as a dependency. It started with 0.8.0 with the migration occurring for the PostgreSQL support. This is allow better operation regardless of your choice of engine. Right now only PostgreSQL has this improvement. I have moved redis and couchdb support into the Attic until I can convert them over as well. IF YOU ARE USING COUCHDB OR REDIS SUPPORT WITH THIS MODULE DO NOT UPGRADE TO 0.8.x UNTIL SUPPORT IS ADDED.
+
 login.js is designed to be a drop-in, minimal configuration express.js login and forgot password module. It doesn't provide twitter accounts OAuth, openid, or Facebook connect authentication, it just makes standard user authentication easy peasy. The original design <strike>most likely</strike> did suck horribly because it was made by Chris Williams ([voodootikigod][http://voodootikigod.com]) and was driven by a need for such a thing (and a good couple pints of beer). It has since been refactor for your pleasure. 
 
 ## Features
